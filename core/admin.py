@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Presentation, ProjectUpdate, ProjectUpdateImage, TestCaseEntry, TestCaseImage
+from .models import Presentation, ProjectUpdate, ProjectUpdateImage, TestCaseEntry, TestCaseImage, GitUpdate, GitScreenshot
 
 @admin.register(Presentation)
 class PresentationAdmin(admin.ModelAdmin):
@@ -24,4 +24,19 @@ class TestCaseImageInline(admin.TabularInline):
 class TestCaseEntryAdmin(admin.ModelAdmin):
     list_display = ('title', 'created_at')
     inlines = [TestCaseImageInline]
+
+class GitScreenshotInline(admin.TabularInline):
+    model = GitUpdate.screenshots.through  # для ManyToMany
+    extra = 3  # сколько пустых полей для добавления сразу
+    verbose_name = "Скриншот Git"
+    verbose_name_plural = "Скриншоты Git"
+
+@admin.register(GitUpdate)
+class GitUpdateAdmin(admin.ModelAdmin):
+    list_display = ['title', 'created_at']
+    inlines = [GitScreenshotInline]
+
+@admin.register(GitScreenshot)
+class GitScreenshotAdmin(admin.ModelAdmin):
+    list_display = ['__str__', 'order']
 # Register your models here.

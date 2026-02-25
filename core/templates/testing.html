@@ -60,7 +60,7 @@
 <!-- Заголовок и широкая карточка Git -->
 <div class="container mt-5">
     <!-- Заголовок -->
-    <h2 class="fs-4 fs-md-3 fs-lg-2 text-center mb-4">Контроль версий Git</h2>
+    <h2 class="fs-4 fs-md-3 fs-lg-2 text-center mb-4"><strong>Контроль версий Git</strong></h2>
 
     <!-- Широкая карточка: Git -->
     <div class="row justify-content-center">
@@ -68,26 +68,27 @@
             <div class="glass-card h-100 d-flex flex-column p-4">
 
                 <!-- Слайдер -->
-                {% if git_test.images.all %}
-                <div id="carousel-git" class="carousel slide mb-4" data-bs-ride="carousel">
-                    <div class="carousel-inner rounded">
-                        {% for img in git_test.images.all %}
+                <div id="carousel-git" class="carousel slide" data-bs-ride="carousel">
+                    <div class="carousel-inner">
+                        {% for img in git_update.screenshots.all %}
                         <div class="carousel-item {% if forloop.first %}active{% endif %}">
-                            <img src="{{ img.image.url }}" class="d-block w-100 carousel-img" 
-                                 style="cursor:pointer;" onclick="openImagePopup('{{ img.image.url }}')">
+                            <img src="{{ img.image.url }}" class="d-block w-100 carousel-img"
+                            style="cursor:pointer;"
+                                onclick="openImagePopup('{{ img.image.url }}')">
                         </div>
                         {% endfor %}
                     </div>
 
-                    <div class="carousel-indicators mt-2">
-                        {% for img in git_test.images.all %}
+                    <!-- Индикаторы -->
+                    <div class="carousel-indicators">
+                        {% for img in git_update.screenshots.all %}
                         <button type="button" data-bs-target="#carousel-git" data-bs-slide-to="{{ forloop.counter0 }}"
-                                class="carousel-indicator {% if forloop.first %}active{% endif %}" 
-                                aria-current="{% if forloop.first %}true{% endif %}" 
-                                aria-label="Slide {{ forloop.counter }}"></button>
+                        class="{% if forloop.first %}active{% endif %}" aria-current="{% if forloop.first %}true{% endif %}"
+                        aria-label="Slide {{ forloop.counter }}"></button>
                         {% endfor %}
                     </div>
 
+                    <!-- Кнопки -->
                     <button class="carousel-control-prev" type="button" data-bs-target="#carousel-git" data-bs-slide="prev">
                         <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                         <span class="visually-hidden">Previous</span>
@@ -96,11 +97,11 @@
                         <span class="carousel-control-next-icon" aria-hidden="true"></span>
                         <span class="visually-hidden">Next</span>
                     </button>
-                </div>
-                {% endif %}
+                    </div>
 
                 <!-- Текстовое описание и результат -->
                 <div class="text-start" style="max-width: 100%; margin: 0 auto;">
+                    <br>
                     <p><strong>Описание:</strong> Демонстрация интеграции Git для контроля версий проекта, включая создание репозитория, коммиты, ветвления и слияния.</p>
                     <p><strong>Ссылка на репозиторий:</strong> <a href="https://github.com/Danjan2806/intelligent_systems_project" target="_blank">https://github.com/Danjan2806/intelligent_systems_project</a></p>
                     <p><strong>Результат:</strong> Все изменения проекта отслеживаются через Git, ветки и коммиты видны, слияния выполняются корректно.</p>
@@ -128,6 +129,19 @@
     justify-content: center;
     gap: 8px;
     margin-top: 8px;
+}
+
+.carousel-indicators button {
+    width: 1px;
+    height: 1px;       /* круглые */
+    background-color: rgba(255,255,255,0.5);
+    border: none;
+}
+
+.carousel-indicators button.active {
+    background-color: rgba(255,255,255,1);
+
+    
 }
 .carousel-indicators button.carousel-indicator {
     width: 12px !important;

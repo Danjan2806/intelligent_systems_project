@@ -11,30 +11,52 @@
 
 <div class="container mt-5">
     <div class="row g-4">
-        <div class="col-12 col-md-6">
-            <div class="glass-card h-100 p-3">
+
+        <!-- Карточка 1 -->
+        <div class="col-12 col-md-6 col-lg-4">
+            <div class="glass-card h-100 p-3 text-center">
                 <h5>Процесс разработки</h5>
-                <p>Описание этапов создания проекта, от планирования до реализации функционала.</p>
+                <img src="{% static 'images/word_icon.png' %}" alt="Процесс разработки" class="img-fluid my-3" style="max-height:150px;">
+                <a href="{{ MEDIA_URL }}documents/process_development.docx" class="btn btn-primary mt-2" download>Скачать документ</a>
             </div>
         </div>
-        <div class="col-12 col-md-6">
-            <div class="glass-card h-100 p-3">
+
+        <!-- Карточка 2 -->
+        <div class="col-12 col-md-6 col-lg-4">
+            <div class="glass-card h-100 p-3 text-center">
                 <h5>Используемые технологии</h5>
-                <p>Django, Python, Bootstrap, HTML5, CSS3, Pillow для работы с изображениями, Git для контроля версий.</p>
+                <img src="{% static 'images/word_icon.png' %}" alt="Используемые технологии" class="img-fluid my-3" style="max-height:150px;">
+                <a href="{{ MEDIA_URL }}documents/technologies.docx" class="btn btn-primary mt-2" download>Скачать документ</a>
             </div>
         </div>
-        <div class="col-12 col-md-6">
-            <div class="glass-card h-100 p-3">
+
+        <!-- Карточка 3 -->
+        <div class="col-12 col-md-6 col-lg-4">
+            <div class="glass-card h-100 p-3 text-center">
                 <h5>Agile/Kanban практики</h5>
-                <p>Демонстрация доски задач, приоритеты, статусы (Backlog → To Do → In Progress → Review → Done).</p>
+                <img src="{% static 'images/word_icon.png' %}" alt="Agile/Kanban практики" class="img-fluid my-3" style="max-height:150px;">
+                <a href="{{ MEDIA_URL }}documents/agile_kanban.docx" class="btn btn-primary mt-2" download>Скачать документ</a>
             </div>
         </div>
-        <div class="col-12 col-md-6">
-            <div class="glass-card h-100 p-3">
+
+        <!-- Карточка 4 -->
+        <div class="col-12 col-md-6 col-lg-4">
+            <div class="glass-card h-100 p-3 text-center">
                 <h5>Стратегия тестирования</h5>
-                <p>Проверка отображения презентаций, скачивания файлов, корректной работы навигации и адаптивности.</p>
+                <img src="{% static 'images/word_icon.png' %}" alt="Стратегия тестирования" class="img-fluid my-3" style="max-height:150px;">
+                <a href="{{ MEDIA_URL }}documents/testing_strategy.docx" class="btn btn-primary mt-2" download>Скачать документ</a>
             </div>
         </div>
+
+        <!-- Карточка 5 -->
+        <div class="col-12 col-md-6 col-lg-4">
+            <div class="glass-card h-100 p-3 text-center">
+                <h5>Важные проектные решения</h5>
+                <img src="{% static 'images/word_icon.png' %}" alt="Важные проектные решения" class="img-fluid my-3" style="max-height:150px;">
+                <a href="{{ MEDIA_URL }}documents/project_decisions.docx" class="btn btn-primary mt-2" download>Скачать документ</a>
+            </div>
+        </div>
+
     </div>
 </div>
 {% endblock %}

@@ -1,6 +1,7 @@
 # Python
 *.pyc
 __pycache__/
+.pytest_cahce
 *.pyo
 *.pyd
 *.swp
@@ -16,9 +17,6 @@ db.sqlite3
 *.log
 *.pot
 *.py[cod]
-
-# Static files (если не хочешь хранить видео/картинки)
-media/
 
 # IDE
 .vscode/

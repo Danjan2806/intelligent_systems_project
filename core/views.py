@@ -1,6 +1,7 @@
 from django.shortcuts import render
-from .models import Presentation, ProjectUpdate, TestCaseEntry
+from .models import Presentation, ProjectUpdate, TestCaseEntry, GitUpdate
 from django.http import FileResponse, Http404
+from django.conf import settings
 
 # Главная страница
 def home_view(request):
@@ -25,10 +26,16 @@ def project_management_view(request):
 
 # Страница документации
 def documentation_view(request):
-    return render(request, 'documentation.html')
+    return render(request, 'documentation.html', {'MEDIA_URL': settings.MEDIA_URL})
 
 # Страница тестирования
 def testing_view(request):
     tests = TestCaseEntry.objects.prefetch_related('images').all()
-    return render(request, 'testing.html', {'tests': tests})
+    git_update = GitUpdate.objects.first()  # берём первую карточку Git (или фильтр по title)
+    
+    context = {
+        'tests': tests,
+        'git_update': git_update,  # теперь шаблон сможет получить скриншоты
+    }
+    return render(request, 'testing.html', context)
 # Create your views here.
