@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<section class="hero">
+    <div class="container text-center">
+        <h1>Тестирование проекта</h1>
+        <p>Демонстрация базового тестирования и проверки функционала сайта</p>
+    </div>
+</section>
+
+<div class="container mt-5">
+    <div class="row g-4">
+        <div class="col-md-6">
+            <div class="glass-card h-100">
+                <h5>Главная страница</h5>
+                <p>Проверка отображения видео-фона, hero-блока и карточек с функционалом.</p>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="glass-card h-100">
+                <h5>Презентации</h5>
+                <p>Проверка корректного отображения списка презентаций, открытия PDF в новой вкладке и скачивания файлов.</p>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="glass-card h-100">
+                <h5>Управление проектом</h5>
+                <p>Проверка отображения всех этапов проекта с изображениями и описанием, адаптивность карточек.</p>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="glass-card h-100">
+                <h5>Документация</h5>
+                <p>Проверка корректного отображения информации о процессе разработки, используемых технологиях и Agile/Kanban.</p>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

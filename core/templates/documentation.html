@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<section class="hero">
+    <div class="container text-center">
+        <h1>Документация проекта</h1>
+        <p>Описание процесса разработки, использованных технологий и Agile/Kanban практик</p>
+    </div>
+</section>
+
+<div class="container mt-5">
+    <div class="row g-4">
+        <div class="col-md-6">
+            <div class="glass-card h-100">
+                <h5>Процесс разработки</h5>
+                <p>Описание этапов создания проекта, от планирования до реализации функционала.</p>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="glass-card h-100">
+                <h5>Используемые технологии</h5>
+                <p>Django, Python, Bootstrap, HTML5, CSS3, Pillow для работы с изображениями, Git для контроля версий.</p>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="glass-card h-100">
+                <h5>Agile/Kanban практики</h5>
+                <p>Демонстрация доски задач, приоритеты, статусы (Backlog → To Do → In Progress → Review → Done).</p>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="glass-card h-100">
+                <h5>Стратегия тестирования</h5>
+                <p>Проверка отображения презентаций, скачивания файлов, корректной работы навигации и адаптивности.</p>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

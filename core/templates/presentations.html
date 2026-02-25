@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<section class="hero">
+    <div class="container text-center">
+        <h1>Презентации</h1>
+        <p>Все материалы по дисциплине "Интеллектуальные системы и технологии"</p>
+    </div>
+</section>
+
+<div class="container mt-5">
+    <div class="row g-4">
+        {% for presentation in presentations %}
+        <div class="col-md-6">
+            <div class="glass-card h-100 p-3">
+                <h4>{{ presentation.title }}</h4>
+                {% if presentation.description %}
+                <p>{{ presentation.description }}</p>
+                {% endif %}
+
+                <!-- Просмотр PDF прямо на сайте -->
+                <div class="pdf-viewer mt-3">
+                    <iframe src="{{ presentation.file.url }}" width="100%" height="400px" style="border:1px solid #ccc;"></iframe>
+                </div>
+
+                <!-- Кнопка для скачивания -->
+                <div class="mt-3">
+                    <a href="{{ presentation.file.url }}" download class="btn btn-outline-light btn-sm">Скачать</a>
+                </div>
+            </div>
+        </div>
+        {% empty %}
+        <p class="text-center">Презентации пока не добавлены.</p>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<section class="hero">
+    <div class="container text-center">
+        <h1>Управление проектом</h1>
+        <p>Демонстрация эволюции проекта и работы по Agile/Kanban</p>
+    </div>
+</section>
+
+<div class="container mt-5">
+    <div class="row g-4">
+        {% for update in updates %}
+        <div class="col-md-4">
+            <div class="glass-card h-100">
+                {% if update.image %}
+                <img src="{{ update.image.url }}" alt="{{ update.title }}" class="img-fluid rounded mb-3">
+                {% endif %}
+                <h5>{{ update.title }}</h5>
+                {% if update.description %}
+                <p>{{ update.description }}</p>
+                {% endif %}
+                {% if update.created_at %}
+                <small class="text-muted">Дата: {{ update.created_at|date:"d.m.Y" }}</small>
+                {% endif %}
+            </div>
+        </div>
+        {% empty %}
+        <p class="text-center">Этапы проекта пока не добавлены.</p>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}
