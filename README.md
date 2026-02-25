@@ -7,6 +7,7 @@
 Структура проекта
 
 - `core/` — основное приложение:
+  - `migrations` — миграции в БД
   - `models.py` — модели Presentation и ProjectUpdate
   - `templates/` — HTML-шаблоны (base.html, home.html, presentations.html и др.)
   - `static/` — CSS, видео и презентации
