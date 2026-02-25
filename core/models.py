@@ -1,9 +1,10 @@
 from django.db import models
 
 class Presentation(models.Model):
-    title = models.CharField(max_length=100)
-    description = models.TextField(blank=True)
+    title = models.CharField(max_length=200)
+    description = models.TextField(blank=True, null=True)
     file = models.FileField(upload_to='presentations/')
+    preview_image = models.ImageField(upload_to='presentations/previews/', blank=True, null=True)  # превью первого слайда
     created_at = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
