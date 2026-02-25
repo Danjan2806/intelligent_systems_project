@@ -1,0 +1,25 @@
+# Python
+*.pyc
+__pycache__/
+*.pyo
+*.pyd
+*.swp
+
+# Virtual environment
+venv/
+env/
+ENV/
+
+# Django
+*.sqlite3
+db.sqlite3
+*.log
+*.pot
+*.py[cod]
+
+# Static files (если не хочешь хранить видео/картинки)
+media/
+
+# IDE
+.vscode/
+.idea/

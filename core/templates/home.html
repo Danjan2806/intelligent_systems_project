@@ -1,2 +1,42 @@
-<h1>Интеллектуальные системы и технологии</h1>
-<p>Итоговый проект</p>
+{% extends 'base.html' %}
+
+{% block content %}
+
+<section class="hero">
+    <div class="container">
+        <h1>Интеллектуальные системы и технологии</h1>
+        <p>Итоговый проект по управлению IT-проектами и разработке веб-приложений на Django</p>
+        <a href="/presentations/" class="btn btn-custom btn-lg mt-4">
+            Смотреть презентации
+        </a>
+    </div>
+</section>
+
+<div class="container mt-5">
+    <div class="row g-4">
+
+        <div class="col-md-4">
+            <div class="glass-card text-center">
+                <h4>10 презентаций</h4>
+                <p>Просмотр и скачивание материалов по дисциплине</p>
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="glass-card text-center">
+                <h4>Agile / Kanban</h4>
+                <p>Демонстрация процесса управления проектом</p>
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="glass-card text-center">
+                <h4>Git & Тестирование</h4>
+                <p>Контроль версий и автоматические тесты</p>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+{% endblock %}
