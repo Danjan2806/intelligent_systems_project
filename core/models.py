@@ -41,4 +41,22 @@ class TestCaseImage(models.Model):
 
     def __str__(self):
         return f"Image for {self.test_case.title}"
+
+class GitScreenshot(models.Model):
+    title = models.CharField(max_length=100, blank=True, null=True)  # опциональный заголовок
+    image = models.ImageField(upload_to='git_screenshots/')
+    order = models.PositiveIntegerField(default=0)  # для сортировки
+
+    def __str__(self):
+        return f"{self.title or 'Screenshot'} ({self.order})"
+
+class GitUpdate(models.Model):
+    title = models.CharField(max_length=100, default="Контроль версий Git")
+    description = models.TextField(blank=True, null=True)
+    repository_link = models.URLField(blank=True, null=True)
+    screenshots = models.ManyToManyField(GitScreenshot, blank=True, related_name='git_updates')
+    created_at = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return self.title
 # Create your models here.
