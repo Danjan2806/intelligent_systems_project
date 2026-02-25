@@ -68,13 +68,17 @@ python manage.py migrate
 ```bash
 python manage.py createsuperuser
 ```
+7. Проводим тесты работы сайта
+```bash
+python manage.py test
+```
 
-7. Запускаем сервер разработки
+8. Запускаем сервер разработки
 ```bash
 python manage.py runserver
 ```
 
-8. Открываем проект в браузере
+9. Открываем проект в браузере
 ```bash
 http://127.0.0.1:8000/
 ```
