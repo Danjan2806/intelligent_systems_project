@@ -12,18 +12,18 @@
 <body>
 
 <!-- Видео-фон -->
-<video autoplay muted loop playsinline class="video-bg">
+<video autoplay muted loop playsinline class="video-bg w-100 h-100" style="object-fit:cover;">
     <source src="{% static 'videos/background_video.mp4' %}" type="video/mp4">
     Ваш браузер не поддерживает видео.
 </video>
 
 <!-- Затемнение -->
-<div class="overlay"></div>
+<div class="overlay position-fixed top-0 start-0 w-100 h-100" style="background:rgba(10,15,30,0.7); z-index:-1;"></div>
 
 <!-- Навбар -->
-<nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+<nav class="navbar navbar-expand-lg navbar-dark fixed-top bg-dark bg-opacity-75">
     <div class="container">
-        <a class="navbar-brand" href="/">ИСиТ</a>
+        <a class="navbar-brand fw-bold letter-spacing-1" href="/">ИСиТ</a>
 
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
             <span class="navbar-toggler-icon"></span>
@@ -49,7 +49,7 @@
 </nav>
 
 <!-- Контент -->
-<div style="margin-top: 100px;">
+<div class="container-fluid mt-5" style="margin-top:100px;">
     {% block content %}{% endblock %}
 </div>
 

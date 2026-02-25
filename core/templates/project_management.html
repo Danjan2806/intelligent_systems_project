@@ -2,24 +2,24 @@
 {% load static %}
 
 {% block content %}
-<section class="hero">
+<section class="hero py-5">
     <div class="container text-center">
-        <h1>Управление проектом</h1>
-        <p>Демонстрация эволюции проекта и работы по Agile/Kanban</p>
+        <h1 class="fs-3 fs-md-2 fs-lg-1">Управление проектом</h1>
+        <p class="fs-6 fs-md-5 fs-lg-4">Демонстрация эволюции проекта и работы по Agile/Kanban</p>
     </div>
 </section>
 
 <div class="container mt-5">
     <div class="row g-4">
         {% for update in updates %}
-        <div class="col-md-4">
-            <div class="glass-card h-100">
+        <div class="col-12 col-sm-6 col-md-4">
+            <div class="glass-card h-100 d-flex flex-column">
                 {% if update.image %}
-                <img src="{{ update.image.url }}" alt="{{ update.title }}" class="img-fluid rounded mb-3">
+                <img src="{{ update.image.url }}" alt="{{ update.title }}" class="img-fluid rounded mb-3" style="object-fit:cover; max-height:200px;">
                 {% endif %}
                 <h5>{{ update.title }}</h5>
                 {% if update.description %}
-                <p>{{ update.description }}</p>
+                <p class="flex-grow-1">{{ update.description }}</p>
                 {% endif %}
                 {% if update.created_at %}
                 <small class="text-muted">Дата: {{ update.created_at|date:"d.m.Y" }}</small>
