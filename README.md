@@ -33,7 +33,7 @@
 1. Клонируем репозиторий
 
 ```bash
-git clone https://github.com/<твое_имя>/intelligent_systems_project.git
+git clone https://github.com/Danjan2806/intelligent_systems_project.git
 cd intelligent_systems_project
 ```
 
@@ -91,6 +91,7 @@ http://127.0.0.1:8000/
 - Через админку можно добавлять:
     - Презентации (Presentation)
     - Этапы проекта и скриншоты (ProjectUpdate)
+    - Скриншоты GitHub'а и всякое подобное (Git screenshots и Git updates)
 Файлы презентаций и скриншоты будут храниться в папке media/.
 
 Статика и мультимедиа
